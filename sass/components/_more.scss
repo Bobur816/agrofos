@@ -1,0 +1,144 @@
+.more {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 40;
+  background-color: rgba(43, 98, 48, 0.9);
+  display: none;
+
+  &.news-more {
+    .more {
+      &__content {
+        grid-template-columns: 48% 1fr;
+        gap: 1rem;
+      }
+      &__img {
+        height: 100%;
+        padding: 0;
+        @include center;
+        border-radius: 1.5rem;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          @include fullImg;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    width: 54rem;
+    height: 25.2rem;
+    @include absCenter;
+    background-color: var(--color-white);
+    border-radius: 1.5rem;
+  }
+
+  &__content {
+    position: relative;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 45% 1fr;
+    gap: 2rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+
+    .card__corner {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    padding: 2rem;
+    @include center;
+
+    img {
+      max-width: 95%;
+    }
+  }
+
+  &__info {
+    padding: 2.1rem;
+    height: 100%;
+    overflow: hidden;
+    &__text {
+      height: 100%;
+      overflow-y: scroll;
+      //   background-color: red;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__close {
+    background-color: var(--color-primary);
+    position: absolute;
+    top: -2.5rem;
+    right: -2.5rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+
+    svg {
+      width: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .more {
+    &.news-more {
+      .more {
+        &__content {
+          grid-template-columns: 1fr;
+        }
+        &__img {
+          width: 100%;
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+
+    &__wrapper {
+      width: 90%;
+      height: fit-content;
+      height: 80%;
+      transform: translate(-50%, -45%);
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 0;
+
+      .card__corner {
+        width: 80%;
+      }
+    }
+
+    &__img {
+      @include center;
+      padding-bottom: 1rem;
+
+      img {
+        max-width: 75%;
+      }
+    }
+
+    &__info {
+      padding: 0 2.1rem 2.1rem 2.1rem;
+    }
+
+    &__close {
+      top: -3.7rem;
+      right: auto;
+      @include absCenterX;
+    }
+  }
+}

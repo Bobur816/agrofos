@@ -1,0 +1,14 @@
+{
+  "name": "6-intest",
+  "version": "1.0.0",
+  "description": "intest verstka",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bobur816",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}

@@ -1,0 +1,36 @@
+.text {
+  &_sm {
+    font-size: 0.7rem;
+    color: var(--color-gray);
+  }
+}
+
+.font {
+  &_semibold {
+    font-weight: 600;
+  }
+
+  &_medium {
+    font-weight: 500;
+  }
+
+  &_normal {
+    font-weight: 400;
+  }
+
+  &_light {
+    font-weight: 300;
+  }
+}
+
+.section__title {
+  font-family: Genos;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.75rem; /* 88.235% */
+}
+
+.text-center {
+  text-align: center;
+}

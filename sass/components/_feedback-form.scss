@@ -1,0 +1,57 @@
+.feedback-form {
+  position: absolute;
+  right: 6.4rem;
+  @include absCenterY;
+  background-color: var(--color-white);
+  //   height: 14.7rem;
+  width: 16.5rem;
+  padding: 1.45rem 1.6rem;
+  @include spaced;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  h3 {
+    line-height: 100%;
+  }
+
+  .number-input {
+    position: relative;
+    background-color: red;
+
+    .phone-format {
+      padding: 0 1.2rem 0 3.65rem;
+    }
+
+    img {
+      position: absolute;
+      @include absCenterY;
+      left: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+
+  input {
+    height: 2.75rem;
+    width: 100%;
+    background-color: #f4f4f4;
+    border: none;
+    outline: none;
+    padding: 0 1.2rem;
+    font-feature-settings: "liga" off, "clig" off;
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 0.8rem; /* 114.286% */
+    &::placeholder {
+      color: rgba(38, 37, 36, 0.5);
+    }
+  }
+
+  button {
+    height: 2.75rem;
+    width: 100%;
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 0.8rem; /* 114.286% */
+  }
+}

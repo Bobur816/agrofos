@@ -1,0 +1,51 @@
+.carousel {
+  &__head {
+    // background-color: rgba(255, 0, 0, 0.466);
+
+    .swiper-pagination {
+      color: var(--color-white);
+    }
+  }
+
+  &__news {
+    height: 20rem;
+  }
+
+  &__item__bg {
+    @include fullImg;
+    @include absCenter;
+  }
+
+  &__controls {
+    position: absolute;
+    @include spaced;
+    gap: 3rem;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    .carousel-num {
+      position: absolute;
+      @include absCenter;
+      transform: translate(-50%, -55%);
+      color: #9bcb3c;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: normal;
+
+      .current {
+        font-size: 1.5rem;
+      }
+    }
+
+    button {
+      height: 3rem;
+      width: 3rem;
+      @include center;
+
+      i {
+        font-size: 0.7rem;
+        line-height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+.modal {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 25;
+  display: none;
+
+  &__overlay {
+    background-color: rgba(35, 52, 98, 0.86);
+    height: 100%;
+    width: 100%;
+    @include center;
+  }
+  &__wrapper {
+    background-color: var(--color-white);
+    padding: 2.85rem 3.75rem;
+    @include absCenter;
+    flex-direction: column;
+
+    &-top {
+      @include center;
+      flex-direction: column;
+      color: var(--color-primary);
+      width: 100%;
+      padding: 0 5rem;
+      text-align: center;
+      gap: 0.7rem;
+      h3 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 100%;
+      }
+
+      p {
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 100%;
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 0.8rem;
+    margin-top: 1.8rem;
+
+    &-item {
+      height: 2.75rem;
+      border: none;
+      outline: none;
+      padding: 0 1.15rem;
+      box-shadow: 0px 38.519px 25.481px 0px rgba(0, 0, 0, 0.04),
+        0px 20px 13px 0px rgba(0, 0, 0, 0.04),
+        0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.03),
+        0px 1.852px 3.148px 0px rgba(0, 0, 0, 0.02);
+
+      font-size: 0.8rem;
+      font-weight: 400;
+      line-height: 100%;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    textarea {
+      resize: none;
+      padding: 1.15rem;
+      height: 6rem;
+    }
+
+    button {
+      height: 2.75rem;
+      width: 14rem;
+      color: var(--color-white);
+      font-size: 0.8re;
+      font-weight: 500;
+      line-height: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 25;
+    display: none;
+
+    &__overlay {
+      background-color: rgba(35, 52, 98, 0.86);
+      height: 100%;
+      width: 100%;
+      @include center;
+    }
+    &__wrapper {
+      background-color: var(--color-white);
+      width: 100%;
+      padding: 2rem 1rem;
+      top: 100%;
+      transform: translate(-50%, -100%);
+      flex-direction: column;
+
+      &-top {
+        @include center;
+        flex-direction: column;
+        padding: 0 2rem;
+        color: var(--color-primary);
+        width: 100%;
+        text-align: center;
+        gap: 0.7rem;
+        h3 {
+          font-size: 1.1rem;
+          font-weight: 500;
+          line-height: 100%;
+        }
+
+        p {
+          font-size: 0.8rem;
+          font-weight: 400;
+          line-height: 100%;
+        }
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        height: 2.75rem;
+        border: none;
+        outline: none;
+        padding: 0 1.15rem;
+        box-shadow: 0px 38.519px 25.481px 0px rgba(0, 0, 0, 0.04),
+          0px 20px 13px 0px rgba(0, 0, 0, 0.04),
+          0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.03),
+          0px 1.852px 3.148px 0px rgba(0, 0, 0, 0.02);
+
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 100%;
+
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      textarea {
+        resize: none;
+        padding: 1.15rem;
+        height: 6rem;
+      }
+
+      button {
+        height: 2.75rem;
+        margin-top: 1.5rem;
+        width: 100%;
+        color: var(--color-white);
+        font-size: 0.8re;
+        font-weight: 500;
+        line-height: 100%;
+      }
+    }
+  }
+}
