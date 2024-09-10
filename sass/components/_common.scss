@@ -61,8 +61,16 @@
   // z-index: -1;
 
   &.products-effect {
-    top: 15rem;
-    right: -25%;
+    top: 0;
+    right: -30%;
+    width: 70%;
+  }
+
+  &.services-effect {
+    // width: 50%;
+    top: -250%;
+    width: 100%;
+    max-width: 50%;
   }
 }
 
@@ -76,5 +84,24 @@
 
   .show-more__wrapper {
     display: block;
+  }
+
+  .effect-img {
+    position: absolute;
+    transition: all 0.5s;
+    // z-index: -1;
+
+    &.products-effect {
+      top: 10rem;
+      right: -10%;
+      width: 70%;
+    }
+
+    &.services-effect {
+      // width: 50%;
+      top: -95%;
+      width: 100%;
+      max-width: 80%;
+    }
   }
 }

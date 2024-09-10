@@ -68,7 +68,6 @@
 
 .about {
   padding-top: 10rem;
-  // border-bottom-right-radius: 0;
 
   &__wrapper {
     display: grid;
@@ -98,8 +97,12 @@
     position: relative;
     overflow: hidden;
     border-radius: 1.5rem;
+    @include center;
+
     img {
-      @include fullImg;
+      height: 150%;
+      width: 150%;
+      object-fit: cover;
       transition: all 0.3s;
     }
 
@@ -147,10 +150,10 @@
 }
 
 .services {
-  margin-top: 11.5rem;
+  margin-top: 2.5rem;
+  padding-top: 9rem;
 
   &__wrapper {
-    // background-color: yellow;
     height: fit-content;
     position: relative;
 
@@ -193,6 +196,8 @@
 
 .news {
   padding-top: 6rem;
+  z-index: 1;
+  position: relative;
   &__wrapper {
     margin-top: 3rem;
     position: relative;
@@ -206,6 +211,7 @@
 
 .activity {
   margin-top: 4rem;
+  position: relative;
 
   &__wrapper {
     display: grid;
@@ -238,9 +244,13 @@
   &__card {
     border-radius: 1.5rem;
     overflow: hidden;
+    height: 14rem; // position: relative;
+    @include center;
 
     img {
-      @include fullImg;
+      height: 120%;
+      width: 120%;
+      object-fit: cover;
       transition: all 0.3s;
     }
 
@@ -256,7 +266,7 @@
     }
     &:nth-child(2) {
       // width: 14.9rem;
-      // height: 11.3rem;
+      height: 11.3rem;
       grid-row: 2 / span 1;
       grid-column: 1 / span 1;
       align-self: center;
@@ -350,10 +360,11 @@
     border-radius: 1.5rem;
     overflow: hidden;
     height: 23rem;
-
+    @include center;
     img {
-      max-width: 100%;
-      @include fullImg;
+      width: 160%;
+      height: 160%;
+      object-fit: cover;
       transition: all 0.3s;
     }
 
@@ -441,6 +452,8 @@
     height: 27.45rem;
     width: 100%;
     overflow: hidden;
+    @include center;
+
     img {
       @include fullImg;
       transition: all 0.3s;
@@ -484,65 +497,26 @@
   }
 
   .about {
-    padding-top: 5rem; // padding: 15rem 0;
+    padding-top: 5rem;
     &__wrapper {
-      display: grid;
       grid-template-columns: 1fr;
       gap: 7rem;
     }
 
-    &__info {
-      p {
-        margin-top: 1.5rem;
-        font-size: 0.9rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%; /* 27px */
-      }
-    }
-
     &__cards {
       height: 20rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
       gap: 1rem;
     }
 
     &__card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1.5rem;
       img {
-        @include fullImg;
-        transition: all 0.3s;
-      }
-
-      &:hover {
-        img {
-          transform: scale(1.1);
-        }
-      }
-
-      &:nth-child(1) {
-        grid-row: 1 / span 5;
-        grid-column: 1 / span 1;
-        transform: translateY(-5rem);
-      }
-      &:nth-child(2) {
-        grid-column: 2 / span 1;
-        grid-row: 1 / span 3;
-      }
-      &:nth-child(3) {
-        grid-column: 2 / span 1;
-        grid-row: 4 / span 2;
+        height: 170%;
+        width: 170%;
       }
     }
   }
 
   .products {
-    padding-top: 6rem;
-
     &__wrapper {
       flex-direction: column;
       align-items: flex-start;
@@ -562,43 +536,13 @@
     margin-top: 5rem;
 
     &__wrapper {
-      height: fit-content;
-      position: relative;
-
       .carousel__services {
-        z-index: 1;
-        height: 100%;
-        overflow: visible;
         padding-bottom: 6rem;
-
-        .swiper-slide.swiper-slide-active {
-          .service-item {
-            &__img,
-            &__name,
-            &__text {
-              opacity: 1;
-              transform: translate(0);
-            }
-          }
-        }
       }
       .carousel__controls {
-        right: auto;
         left: 0.1rem;
         position: absolute;
-        &__line {
-          z-index: 2;
-          position: absolute;
-          left: calc(100% + 1rem);
-          background-color: var(--color-primary);
-          height: 1px;
-          width: 100vw;
-        }
       }
-    }
-
-    &__carousel-num {
-      position: absolute;
     }
   }
 
@@ -607,7 +551,6 @@
     overflow: hidden;
     &__wrapper {
       margin-top: 1.5rem;
-      position: relative;
 
       .carousel__news {
         overflow: visible;
@@ -643,99 +586,22 @@
   }
 
   .feedback {
-    margin-top: 6rem;
-
     &__wrapper {
-      display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
 
     &__left {
-      background-color: var(--color-primary-dark);
-      color: var(--color-white);
       padding: 1.5rem;
-      border-radius: 1.5rem;
-      @include spaced;
-      flex-direction: column;
-      align-items: flex-start;
       gap: 1.5rem;
-
-      &_top {
-        h4 {
-          font-size: 1.6rem;
-          font-weight: 500;
-          line-height: 153%; /* 48.96px */
-        }
-
-        p {
-          font-weight: 300;
-          line-height: 153%; /* 27.54px */
-        }
-      }
     }
 
     &__form {
       width: 100%;
-      @include spaced;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-
-      input {
-        width: 100%;
-        padding: 1.05rem;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        color: #c1a0a0;
-        border-bottom: 0.1rem solid #c1a0a0;
-        line-height: 110%; /* 19.8px */
-        transition: all 0.3s;
-
-        &[type="number"]::-webkit-outer-spin-button,
-        &[type="number"]::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-
-        &::placeholder {
-          color: #c1a0a0;
-          transition: all 0.3s;
-        }
-
-        &:focus {
-          color: var(--color-primary);
-          border-color: var(--color-primary);
-
-          &::placeholder {
-            color: var(--color-primary);
-          }
-        }
-      }
 
       button {
         margin-top: 1.5rem;
-        padding: 1rem 2.25rem;
         width: 100%;
-      }
-    }
-
-    &__right {
-      border-radius: 1.5rem;
-      overflow: hidden;
-      height: 23rem;
-
-      img {
-        max-width: 100%;
-        @include fullImg;
-        transition: all 0.3s;
-      }
-
-      &:hover {
-        img {
-          transform: scale(1.03);
-        }
       }
     }
   }
